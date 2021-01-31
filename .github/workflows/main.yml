@@ -34,18 +34,15 @@ jobs:
   # uses: pengyanb/npm-versioning-action@2fbc8b7d23a499c51ba667b018ea281796ffb901
       - uses: pengyanb/npm-versioning-action@v12
         with:
-       
-    # release branch name, which semantic version is generated without suffix
-        release-branch: # default is master
-    # path to package.json file
-        package-json-path: # optional, default is ./package.json
-    # update package.json version after version is generated
-        update-version: 12
-  cmd: install  #npm install  / yarn install
-       - name: creating build
+                 cmd: install
+      - name: creating build
         run: npm build
+        
       - name: Installing surge
         run: npm install --global surge
+        
       - name: deploying using surge
         run: surge ./build http://bootcamp_sample2.surge.sh/--token ${{ secrets.PROJECT002_TOKEN }}
+
+
 
