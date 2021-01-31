@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Bootcamp Sample2
 
 # Controls when the action will run. 
 on:
@@ -26,17 +26,18 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
         with:
-        version:  12
+          version:  12
     
       - name: GitHub Action for Yarn
   # You may pin to the exact commit or the version.
   # uses: Borales/actions-yarn@4965e1a0f0ae9c422a9a5748ebd1fb5e097d22b9
         uses: Borales/actions-yarn@v2.3.0
         with:
-    
-        cmd: install
+          cmd: install
+          
       - name : creating build
       - name: yarn build
+        
       - name : installing surge
         run : npm install -g surge
      
